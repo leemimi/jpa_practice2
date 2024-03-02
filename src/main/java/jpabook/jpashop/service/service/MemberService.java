@@ -42,4 +42,12 @@ public class MemberService {
         return memberRepository.findOne(memberId);
     }
 
+    @Transactional
+    public void update (Long id, String name) {
+        Member member = memberRepository.findOne(id);
+        member.setName(name); //영속상태 멤버
+        //@Transactional 의해 트랜잭션 관련한 AOP가 끝나는 시점에 커밋
+        // jpa 플러시 영속성 컨텍스트 데이터베이스 커밋함
+
+    }
 }
