@@ -58,17 +58,15 @@ public class Order {
     //==생성 메서드==//
     // 밖에서 setter로 값을 세팅하는게 아니라 Order 객체 생성할 때부터 createOrder()를 호출하도록 해서 여기서 주문 생성을 완결시킴
     // 장점 : 주문 생성 관련 수정은 이 생성 메서드만 고치면 된다
-    public static Order createOrder(Member member, Delivery delivery, OrderItem...orderItems) {
+    public static Order createOrder(Member member, Delivery delivery, OrderItem... orderItems) {
         Order order = new Order();
-
         order.setMember(member);
         order.setDelivery(delivery);
-        for (OrderItem orderItem:orderItems) {
+        for (OrderItem orderItem : orderItems) {
             order.addOrderItem(orderItem);
         }
         order.setStatus(OrderStatus.ORDER);
         order.setOrderDate(LocalDateTime.now());
-
         return order;
     }
 

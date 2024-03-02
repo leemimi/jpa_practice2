@@ -6,8 +6,6 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.aspectj.weaver.ast.Or;
-import org.hibernate.cache.spi.support.AbstractReadWriteAccess;
 
 import static jakarta.persistence.FetchType.LAZY;
 
