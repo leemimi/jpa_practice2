@@ -1,15 +1,15 @@
 package jpabook.jpashop.repository;
 
 import jakarta.persistence.EntityManager;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
+@AllArgsConstructor
 public class OrderSimpleQueryRepository {
     private final EntityManager em;
 
-    public OrderSimpleQueryRepository (EntityManager em) {
-        this.em = em;
-    }
 
     public List<SimpleOrderQueryDto> findOrderDtos() {
         return em.createQuery(
